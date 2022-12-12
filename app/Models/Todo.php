@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
+    protected $fillable = ['作成日', 'タスク名', '更新', '削除'];
 }

@@ -7,9 +7,9 @@ use App\Models\Todo;
 
 class TodoController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $content = Todo::all();
-        return view('index', ['item' =>$items]);
+        $todos = Todo::all();
+        return view('index', ['todos' =>$todos]);
     }
 }

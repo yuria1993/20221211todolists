@@ -8,7 +8,7 @@
 </head>
 
 <body>
-@extends('layouts.default')
+@extends('layouts.parent.blade.php')
 <style>
   th{
     background-color: #1760a0;
@@ -38,13 +38,13 @@
     <th>削除</th>
  </tr>
 
- @foreach($contents as $content)
+ @foreach($todos as $todo)
 
 <tr>
-  <td>{{$item->id}}</td>
-  <td>{{$item->timestamp}}</td>
-  <td>{{$item->timestamp}}</td>
-  <td>{{$item->content}}</td>
+  <td>{{$todo->id}}</td>
+  <td>{{$todo->作成日}}</td>
+  <td>{{$todo->更新}}</td>
+  <td>{{$todo->削除}}</td>
 </tr>
 
 @endforeach
