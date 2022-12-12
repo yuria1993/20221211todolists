@@ -8,38 +8,50 @@
 </head>
 
 <body>
-  <h1>Todo List</h1>
+@extends('layouts.default')
+<style>
+  th{
+    background-color: #1760a0;
+    color: white;
+    padding: 5px 40px;
+  }
 
-<form action="/create" method="POST">
-    @csrf
-  <input type="text" name="content">
-  <input type="submit" value="追加">
-</form>
+  tr:nth-child(odd)td{
+    background-color: #FFFFFF;
+  }
 
-  <h2>作成日</h2>
-<form action="/update" method="POST">
-  @csrf
- <input type="date" name="data">
+  td{
+    padding:25px 40px;
+    background-color: #EEEEEE;
+    text-align:center;
+  }
+</style>
+
+@section('title','Todo list')
+
+@section('content')
+<table>
+  <tr>
+    <th>作成日</th>
+    <th>タスク名</th>
+    <th>更新</th>
+    <th>削除</th>
+ </tr>
+
+ @foreach($contents as $content)
+
+<tr>
+  <td>{{$item->id}}</td>
+  <td>{{$item->timestamp}}</td>
+  <td>{{$item->timestamp}}</td>
+  <td>{{$item->content}}</td>
+</tr>
+
+@endforeach
+</table>
+@endsection
 
 
-
-
-  <h2>タスク名</h2>
-  <form action="/" method="GET">
-    @csrf
-  <input type="text">
-
-
-
-
-  <h2>更新</h2>
-  <form action="/update" method="POST">
-    @csrf
-  <input type="submit" value="更新">
-
-  <h2>削除</h2>
-  <form action="/delate" method="POST">
-  <input type="submit" value="削除">
 
 
 
