@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
-    use HasFactory;
-    protected $fillable = ['作成日', 'タスク名', '更新', '削除'];
+    protected $fillable = [
+        'todo',
+        'deadline',
+    ];
 }
